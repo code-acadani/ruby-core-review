@@ -24,6 +24,9 @@
 
 # Represent an employee using a class instance
 class Employee
+	attr_reader :first_name, :last_name, :salary, :active
+	attr_writer :first_name, :last_name, :salary, :active
+
 	def initialize(input_first_name, input_last_name, input_salary, input_active)
 		@first_name = input_first_name
 		@last_name = input_last_name
@@ -38,31 +41,6 @@ class Employee
 	def give_annual_raise
 		@salary = 1.05 * @salary
 	end
-
-	def first_name
-		@first_name
-	end
-
-	def last_name
-		@last_name
-	end
-
-	def salary
-		@salary
-	end
-
-	def active
-		@active
-	end
-
-	def active=(input_active)
-		@active = input_active
-	end
-
-	def last_name=(input_last_name)
-		@last_name = input_last_name
-	end
-	
 end
 
 employee1 = Employee.new("Majora", "Carter", 80000, true)
@@ -76,7 +54,6 @@ employee1.active = false
 puts employee1.active
 employee1.last_name = "Campos"
 puts employee1.last_name
-
 
 
 
