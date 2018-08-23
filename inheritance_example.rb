@@ -18,6 +18,14 @@ class Vehicle
 end
 
 class Car < Vehicle
+	attr_accessor :fuel, :make, :model
+	def initialize(fuel, make, model)
+    super()
+    @fuel = fuel
+    @make = make
+    @model = model
+  end
+
   def honk_horn
     puts "Beeeeeeep!"
   end
@@ -30,6 +38,7 @@ class Bike < Vehicle
 end
 
 bike = Bike.new
-car = Car.new
+car = Car.new("diesel", "ford", "f150")
 car.honk_horn
 bike.ring_bell
+puts car.fuel
