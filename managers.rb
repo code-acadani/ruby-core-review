@@ -43,11 +43,38 @@ class Manager < Employee
 		# use some email sending library to actually do this
 		puts "Email sent!"
 	end
+
+	def give_all_raises
+		# loop through the @employees array 
+		# give each employee in the array a raise using give_annual_raise method
+		# i = 0
+		# @employees.length.times do
+		# 	@employees[i].give_annual_raise
+		# 	i += 1
+		# end
+		@employees.each do |employee|
+			employee.give_annual_raise
+		end
+	end
+
+	def fire_all_employees
+		# loop through the @employees array
+		# change each employees active status to false
+		@employees.each do |employee|
+			employee.active = false
+		end
+	end
 end
 
 manager = Manager.new(first_name: "Tayt", last_name: "Bicknell", salary: 100000, active: true, employees: [employee1, employee2])
-manager.print_info
-manager.send_report
+# manager.print_info
+# manager.send_report
+manager.give_all_raises
+puts employee1.salary
+puts employee2.salary
+manager.fire_all_employees
+puts employee1.active
+puts employee2.active
 
 
 
