@@ -2,7 +2,7 @@ require "./employees.rb"
 require "./email_reportable.rb"
 
 module Actualize
-	class Manager < Employee
+	class Manager < Actualize::Employee
 		include EmailReportable 
 
 		def initialize(options_hash)
